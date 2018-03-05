@@ -1,0 +1,4 @@
+# MstdnTimelinePreviewCard
+mastodonでPreviewCardをTLでも展開して欲しいなぁと思って作ったやつです。
+
+Tampermonkeyとかを使ってください。
