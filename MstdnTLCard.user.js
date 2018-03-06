@@ -13,6 +13,9 @@
 var INSTANCE = $(location).attr('host');
 
 function card_formater(url, title, type, description, image, width, height) {
+  if (description.length > 50) {
+    description = description.substr(0,50);
+  }
   if (type == "photo") {
     return '<a href="' + url + '" class="status-card horizontal" target="_blank" rel="noopener"><div class="status-card__image"><img src="' + image + '" alt="' + title + '" class="status-card__image-image" width="' + width + '" height="' + height + '"></div><div class="status-card__content"><strong class="status-card__title" title="' + title + '">' + title + '</strong><span class="status-card__host">' + url.match(/^https?:\/\/(.*?)\//)[1] + '</span></div></a>';
   } else if (width > height) {
