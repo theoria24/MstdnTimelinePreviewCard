@@ -56,8 +56,9 @@ function card_formater(url, title, type, description, content, width, height) {
           } // else {$(id).find('.status__content').after("None");}
         });
       });
-    })).observe($('.item-list').get(0), {
+    })).observe($('.columns-area').get(0), {
       childList: true,
+      subtree: true,
     });
   }, 5000);
 })();
