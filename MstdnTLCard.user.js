@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         mastodonのTLにPreviewCardを表示するやつ
-// @namespace    https://github.com/hs-sh-net/MstdnTimelinePreviewCard
-// @version      0.1.1
+// @namespace    https://github.com/theoria24/MstdnTimelinePreviewCard
+// @version      0.1.2
 // @description  PreviewCardをTLに表示します
 // @author       theoria, hs-sh.net
-// @match        https://otoya.space/web/*
+// @match        https://theboss.tech/web/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-2.2.4.min.js
 // @license      MIT License
