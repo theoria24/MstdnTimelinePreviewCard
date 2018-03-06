@@ -13,6 +13,9 @@
 var INSTANCE = $(location).attr('host');
 
 function card_formater(url, title, type, description, content, width, height) {
+  if (description.length > 50) {
+    description = description.substr(0,50);
+  }
   if (type == "photo") {
     return '<a href="' + url + '" class="status-card horizontal" target="_blank" rel="noopener"><div class="status-card__image"><img src="' + content + '" alt="' + title + '" class="status-card__image-image" width="' + width + '" height="' + height + '"></div><div class="status-card__content"><strong class="status-card__title" title="' + title + '">' + title + '</strong><span class="status-card__host">' + url.match(/^https?:\/\/(.*?)\//)[1] + '</span></div></a>';
   } else if(type == "link"){
@@ -30,7 +33,7 @@ function card_formater(url, title, type, description, content, width, height) {
 (function() {
   'use strict';
   setTimeout(function() {
-    $('.column > div.scrollable > div.item-list > article:not(.carded,:has(.notification))').each(function() {
+    $('article:not(:has(.notification)) > div > .status__wrapper > .status:not(.carded)').each(function() {
       $(this).addClass("carded");
       var id = $(this);
       $.getJSON("https://" + INSTANCE + "/api/v1/statuses/" + id.attr('data-id') + "/card").done(function(data) {
@@ -42,7 +45,7 @@ function card_formater(url, title, type, description, content, width, height) {
       });
     });
     (new MutationObserver(function(MutationRecords, MutationObserver) {
-      $('.column > div.scrollable > div.item-list > article:not(.carded,:has(.notification))').each(function() {
+      $('article:not(:has(.notification)) > div > .status__wrapper > .status:not(.carded)').each(function() {
         $(this).addClass("carded");
         var id = $(this);
         $.getJSON("https://" + INSTANCE + "/api/v1/statuses/" + id.attr('data-id') + "/card").done(function(data) {
