@@ -37,10 +37,10 @@ function card_formater(url, title, type, description, content, width, height) {
       $(this).addClass("carded");
       var id = $(this);
       $.getJSON("https://" + INSTANCE + "/api/v1/statuses/" + id.attr('data-id') + "/card").done(function(data) {
-        if (data.image != null && data.image != "") {
-          $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.image, data.width, data.height));
-        } else if (data.html != null && data.html != "") {
+        if (data.html != null && data.html != "") {
           $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.html, data.width, data.height));
+        } else if (data.image != null && data.image != "") {
+          $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.image, data.width, data.height));
         } // else {$(id).find('.status__content').after("None");}
       });
     });
@@ -49,10 +49,10 @@ function card_formater(url, title, type, description, content, width, height) {
         $(this).addClass("carded");
         var id = $(this);
         $.getJSON("https://" + INSTANCE + "/api/v1/statuses/" + id.attr('data-id') + "/card").done(function(data) {
-          if (data.image != null && data.image != "") {
-            $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.image, data.width, data.height));
-          } else if (data.html != null && data.html != "") {
+          if (data.html != null && data.html != "") {
             $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.html, data.width, data.height));
+          } else if (data.image != null && data.image != "") {
+            $(id).find('.status__content').after(card_formater(data.url, data.title, data.type, data.description, data.image, data.width, data.height));
           } // else {$(id).find('.status__content').after("None");}
         });
       });
