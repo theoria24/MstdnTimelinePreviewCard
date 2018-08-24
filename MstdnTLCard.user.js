@@ -58,7 +58,7 @@ function card_formater(url, title, type, description, content, width, height) {
                           url.match(/^https?:\/\/(.*?)\//)[1]
                         }</span>
                     </div>
-                </a>'`;
+                </a>`;
     } else {
       return `
             <a href="${url}" class="status-card" target="_blank" rel="noopener">
