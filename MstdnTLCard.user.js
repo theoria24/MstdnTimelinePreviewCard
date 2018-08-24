@@ -26,7 +26,9 @@ function card_formater(url, title, type, description, content, width, height) {
       return escape[match];
     });
   }
+  title = escape(title);
   description = escape(description);
+  content = escape(content);
   if (description.length > 50) {
     description = description.substr(0, 50);
   }
