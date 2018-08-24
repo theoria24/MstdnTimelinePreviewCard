@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         mastodonのTLにPreviewCardを表示するやつ
 // @namespace    https://github.com/theoria24/MstdnTimelinePreviewCard
-// @version      0.1.5
+// @version      0.1.6
 // @description  PreviewCardをTLに表示します
 // @author       theoria, hs-sh.net, Eai
 // @match        https://theboss.tech/web/*
