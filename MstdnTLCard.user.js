@@ -4,7 +4,7 @@
 // @version      0.1.4
 // @description  PreviewCardをTLに表示します
 // @author       theoria, hs-sh.net, Eai
-// @match        https://*.*/web/*
+// @match        https://theboss.tech/web/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-2.2.4.min.js
 // @license      MIT License
