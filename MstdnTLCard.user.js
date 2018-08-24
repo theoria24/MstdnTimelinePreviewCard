@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         mastodonのTLにPreviewCardを表示するやつ
 // @namespace    https://github.com/theoria24/MstdnTimelinePreviewCard
-// @version      0.1.3
+// @version      0.1.4
 // @description  PreviewCardをTLに表示します
-// @author       theoria, hs-sh.net
-// @match        https://theboss.tech/web/*
+// @author       theoria, hs-sh.net, Eai
+// @match        https://*.*/web/*
 // @grant        none
 // @require      http://code.jquery.com/jquery-2.2.4.min.js
 // @license      MIT License
@@ -13,6 +13,20 @@
 var INSTANCE = $(location).attr("host");
 
 function card_formater(url, title, type, description, content, width, height) {
+  function escape(str) {
+    return str.replace(/[<>&"'`]/g, match => {
+      const escape = {
+        "<": "&lt;",
+        ">": "&gt;",
+        "&": "&amp;",
+        "\"": "&quot;",
+        "'": "&#39;",
+        "`": "&#x60;"
+      };
+      return escape[match];
+    });
+  }
+  description = escape(description);
   if (description.length > 50) {
     description = description.substr(0, 50);
   }
