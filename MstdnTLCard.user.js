@@ -28,7 +28,6 @@ function card_formater(url, title, type, description, content, width, height) {
   }
   title = escape(title);
   description = escape(description);
-  content = escape(content);
   if (description.length > 50) {
     description = description.substr(0, 50);
   }
