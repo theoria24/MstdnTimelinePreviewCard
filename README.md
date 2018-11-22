@@ -1,3 +1,5 @@
+**mastodon v2.6.0で本家にそれっぽい機能が入りましたのでアーカイブ化しました**
+
 # MstdnTimelinePreviewCard
 mastodonでPreviewCardをTLでも展開して欲しいなぁと思って作ったやつです。
 
